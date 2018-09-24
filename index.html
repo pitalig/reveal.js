@@ -7,7 +7,7 @@
 		<title>reveal.js</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/nu_gabriel.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -29,30 +29,159 @@
 					<p class="footer">Gabriel Pitali</p>
 				</section>
 				<section>
-					<h3>Programação Funcional</h3>
-				</section>
-				<section>
-					<p>Imutabilidade</p>
-				</section>
-				<section>
-					<p>Funções Puras</p>
-				</section>
-				<section>
-					<p>Funções de "primeira classe"</p>
-				</section>
-				<section>
 					<h3>Clojure</h3>
-					<img class="stretch" style="width: 400px;height: 400px;" src="images/clojure.png"/>
+					<img class="plain" style="width: 400px;height: 400px;" src="images/clojure.png"/>
 				</section>
 				<section>
-					<p></p>
+					<p>dialeto Lisp</p>
+					<p class="fragment fade-up">Lisp 🠞 List Processing</p>
 				</section>
 				<section>
-					<p></p>
+					<p>funcional</p>
 				</section>
 				<section>
-					<p></p>
+					<p>Java Virtual Machine</p>
+					<p>(JVM)</p>
 				</section>
+							
+				<section>
+					<p>como eu uso funções em Clojure?</p>
+				</section>
+				<section>
+					<pre style="width: fit-content"><code data-trim data-noescape clojure>
+						(nome-funcao parametro1 parametro2 parametro3)
+					</code></pre>
+					<div class="container">
+						<div class="col"></div>
+						<div class="col">
+							<pre class="fragment fade-up" style="width: fit-content"><code data-trim data-noescape clojure>
+								(+ 1 2)
+								=> 3
+							</code></pre>
+						</div>
+						<div class="col">
+							<pre class="fragment fade-up" style="width: fit-content"><code data-trim data-noescape clojure>
+								(* 2 3)
+								=> 6
+							</code></pre>
+						</div>
+						<div class="col"></div>
+					</div>
+					<div class="container">
+						<div class="col"></div>
+						<div class="col">
+							<pre class="fragment fade-up" style="width: fit-content"><code data-trim data-noescape clojure>
+								(= 5 5)
+								=> true
+							</code></pre>
+						</div>
+						<div class="col">
+							<pre class="fragment fade-up" style="width: fit-content"><code data-trim data-noescape clojure>
+								(= 0 5)
+								=> false
+							</code></pre>
+						</div>
+						<div class="col"></div>
+					</div>
+				</section>
+
+				<section>
+					<div class="container">
+						<div class="col">
+							<pre class="fragment fade-up" data-fragment-index="8" style="width: fit-content"><code data-trim data-noescape clojure>
+								(+ 1 2)
+								=> 3
+							</code></pre>
+						</div>
+						<div class="col"></div>
+						<div class="col">
+							<pre class="fragment fade-up" data-fragment-index="6" style="width: fit-content"><code data-trim data-noescape clojure>
+								(+ 1 2)
+								=> 3
+							</code></pre>
+						</div>
+						<div class="col"></div>
+					</div>
+					<div class="container">
+						<div class="col"></div>
+						<div class="col">
+							<pre class="fragment fade-up" data-fragment-index="3" style="width: fit-content"><code data-trim data-noescape clojure>
+								(+ 1 2)
+								=> 3
+							</code></pre>
+						</div>
+						<div class="col"></div>
+						<div class="col">
+							<pre class="fragment fade-up" data-fragment-index="4" style="width: fit-content"><code data-trim data-noescape clojure>
+								(+ 1 2)
+								=> 3
+							</code></pre>
+						</div>
+					</div>
+					<p>funções puras</p>
+					<div class="container">
+						<div class="col"></div>
+						<div class="col">
+							<pre class="fragment fade-up" data-fragment-index="1" style="width: fit-content"><code data-trim data-noescape clojure>
+								(+ 1 2)
+								=> 3
+							</code></pre>
+						</div>
+						<div class="col">
+							<pre class="fragment fade-up" data-fragment-index="2" style="width: fit-content"><code data-trim data-noescape clojure>
+								(+ 1 2)
+								=> 3
+							</code></pre>
+						</div>
+						<div class="col"></div>
+					</div>
+					<div class="container">
+						<div class="col">
+							<pre class="fragment fade-up" data-fragment-index="5" style="width: fit-content"><code data-trim data-noescape clojure>
+								(+ 1 2)
+								=> 3
+							</code></pre>
+						</div>
+						<div class="col"></div>
+						<div class="col"></div>
+						<div class="col">
+							<pre class="fragment fade-up" data-fragment-index="7" style="width: fit-content"><code data-trim data-noescape clojure>
+								(+ 1 2)
+								=> 3
+							</code></pre>
+						</div>
+					</div>
+				</section>
+				
+				<section>
+					<p>def</p> 
+					<pre class="fragment fade-up" style="width: fit-content"><code data-trim data-noescape clojure>
+						(def dez 10)
+					</code></pre>
+				</section>
+				<section>
+					<p>funções de "primeira classe"</p>
+					<pre class="fragment fade-up" style="width: fit-content"><code data-trim data-noescape clojure>
+						(def soma +)
+					</code></pre>
+					<pre class="fragment fade-up" style="width: fit-content"><code data-trim data-noescape clojure>
+						(+ 1 2)
+						=> 3
+					</code></pre>
+					<pre class="fragment fade-up" style="width: fit-content"><code data-trim data-noescape clojure>
+						(soma 1 2)
+						=> 3
+					</code></pre>
+				</section>
+
+				<section>
+					<p>defn</p> 
+					<pre class="fragment fade-up" style="width: fit-content"><code data-trim data-noescape clojure>
+						(defn <span class="fragment highlight-current-white">soma10</span> <span class="fragment highlight-current-white">[x]</span>
+        <span class="fragment highlight-current-white">(+ 10 x)</span>)
+                    </code></pre>
+				</section>
+
 			</div>
 		</div>
 
