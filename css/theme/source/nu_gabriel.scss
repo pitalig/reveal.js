@@ -64,6 +64,10 @@ section.has-light-background {
 	background-color: #ffffff;
 }
 
+pre {
+	width: fit-content !important;
+}
+
 // Theme template ------------------------------
 @import "../template/theme";
 // ---------------------------------------------
