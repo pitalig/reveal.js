@@ -44,7 +44,7 @@ section.has-light-background {
 }
   
 .purple {
-	font-size: 24px;
+	font-size: 1.3em !important;
 	color: #a025d1;
 }
 
@@ -64,8 +64,25 @@ section.has-light-background {
 	background-color: #ffffff;
 }
 
-pre {
+.reveal section p {
+    font-weight: bold;
+    font-size: 1.7em;
+}
+
+.reveal section pre {
+    font-size: 0.9em;
 	width: fit-content !important;
+}
+
+.reveal section pre.small {
+    font-size: 0.5em !important;
+}
+.reveal section pre.small2 {
+    font-size: 0.65em !important;
+}
+
+.reveal section pre.medium {
+    font-size: 0.8em !important;
 }
 
 // Theme template ------------------------------
