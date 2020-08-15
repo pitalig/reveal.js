@@ -1,0 +1,527 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/nu_gabriel.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h2>Introdução a Programação Funcional em Clojure</h2>
+                    <p class="purple">Gabriel Pitali</p>
+                    <aside class="notes">
+                        Explicar o assunto da palestra
+                    </aside>
+				</section>
+				<section>
+					<h3>Clojure</h3>
+					<img class="plain" style="width: 400px;height: 400px;" src="images/clojure.png"/>
+				</section>
+				<section>
+					<p>dialeto Lisp</p>
+					<p class="fragment fade-up">Lisp => List Processing</p>
+                    <aside class="notes">
+                        - Sintaxe
+                    </aside>
+				</section>
+				<section>
+					<p>funcional</p>
+				</section>
+				<section>
+					<p>Java Virtual Machine</p>
+					<p>(JVM)</p>
+                    <aside class="notes">
+                        INTRODUZIR PROXIMO SLIDE ANTES DE PASSAR
+                    </aside>
+				</section>
+							
+				<section>
+					<p>como eu uso funções em Clojure?</p>
+				</section>
+				<section>
+					<pre class="medium"><code data-trim data-noescape class="clojure">
+						(nome-funcao parametro1 parametro2 parametro3)
+					</code></pre>
+					<div class="container">
+						<div class="col"></div>
+						<div class="col">
+							<pre class="fragment fade-up"><code data-trim data-noescape class="clojure">
+								(+ 1 2)
+								=> 3
+							</code></pre>
+						</div>
+						<div class="col">
+							<pre class="fragment fade-up"><code data-trim data-noescape class="clojure">
+								(* 2 3)
+								=> 6
+							</code></pre>
+						</div>
+						<div class="col"></div>
+					</div>
+					<div class="container">
+						<div class="col"></div>
+						<div class="col">
+							<pre class="fragment fade-up"><code data-trim data-noescape class="clojure">
+								(= 5 5)
+								=> true
+							</code></pre>
+						</div>
+						<div class="col">
+							<pre class="fragment fade-up"><code data-trim data-noescape class="clojure">
+								(= 0 5)
+								=> false
+							</code></pre>
+						</div>
+						<div class="col"></div>
+					</div>
+				</section>
+
+				<section>
+					<div class="container">
+						<div class="col">
+							<pre class="fragment fade-up" data-fragment-index="8"><code data-trim data-noescape class="clojure">
+								(+ 1 2)
+								=> 3
+							</code></pre>
+						</div>
+						<div class="col"></div>
+						<div class="col">
+							<pre class="fragment fade-up" data-fragment-index="6"><code data-trim data-noescape class="clojure">
+								(+ 1 2)
+								=> 3
+							</code></pre>
+						</div>
+						<div class="col"></div>
+					</div>
+					<div class="container">
+						<div class="col"></div>
+						<div class="col">
+							<pre class="fragment fade-up" data-fragment-index="3"><code data-trim data-noescape class="clojure">
+								(+ 1 2)
+								=> 3
+							</code></pre>
+						</div>
+						<div class="col"></div>
+						<div class="col">
+							<pre class="fragment fade-up" data-fragment-index="4"><code data-trim data-noescape class="clojure">
+								(+ 1 2)
+								=> 3
+							</code></pre>
+						</div>
+                        <aside class="notes">
+                            INTRODUZIR PROXIMO SLIDE ANTES DE PASSAR
+                        </aside>
+					</div>
+					<p>funções puras</p>
+					<div class="container">
+						<div class="col"></div>
+						<div class="col">
+							<pre class="fragment fade-up" data-fragment-index="1"><code data-trim data-noescape class="clojure">
+								(+ 1 2)
+								=> 3
+							</code></pre>
+						</div>
+						<div class="col">
+							<pre class="fragment fade-up" data-fragment-index="2"><code data-trim data-noescape class="clojure">
+								(+ 1 2)
+								=> 3
+							</code></pre>
+						</div>
+						<div class="col"></div>
+					</div>
+					<div class="container">
+						<div class="col">
+							<pre class="fragment fade-up" data-fragment-index="5"><code data-trim data-noescape class="clojure">
+								(+ 1 2)
+								=> 3
+							</code></pre>
+						</div>
+						<div class="col"></div>
+						<div class="col"></div>
+						<div class="col">
+							<pre class="fragment fade-up" data-fragment-index="7"><code data-trim data-noescape class="clojure">
+								(+ 1 2)
+								=> 3
+							</code></pre>
+						</div>
+					</div>
+				</section>
+				
+				<section>
+					<p>def</p> 
+					<pre class="fragment fade-up"><code data-trim data-noescape class="clojure">
+						(def A 10)
+					</code></pre>
+				</section>
+				<section>
+					<p>funções de "primeira classe"</p>
+					<pre class="fragment fade-up"><code data-trim data-noescape class="clojure">
+						(def soma +)
+					</code></pre>
+					<pre class="fragment fade-up"><code data-trim data-noescape class="clojure">
+						(+ 1 2)
+						=> 3
+					</code></pre>
+					<pre class="fragment fade-up"><code data-trim data-noescape class="clojure">
+						(soma 1 2)
+						=> 3
+					</code></pre>
+				</section>
+
+				<section>
+					<p>defn</p> 
+					<pre class="fragment fade-up"><code data-trim data-noescape class="clojure">
+						(defn <span class="fragment highlight-current-white">soma10</span> <span class="fragment highlight-current-white">[x]</span>
+        <span class="fragment highlight-current-white">(+ 10 x)</span>)
+                    </code></pre>
+					<pre class="fragment fade-up"><code data-trim data-noescape class="clojure">
+						(soma10 2)
+						=> 12
+					</code></pre>
+                    <aside class="notes">
+                        INTRODUZIR PROXIMO SLIDE ANTES DE PASSAR |||| FALAR SOBRE NTI E PROGRAD
+                    </aside>
+				</section>
+				
+				<section>
+					<p>ta, mas como eu faço algo útil?</p>
+				</section>
+				<section>
+					<img class="plain" style="" src="images/portal_export.png"/>
+				</section>
+                
+                <section>
+                    <p>disciplinas</p>
+                    <pre class="small"><code class="stretch" data-trim data-noescape class="clojure">
+                        (def disciplinas
+                            [{:conceito   "C"
+                              :codigo     "BCN0404-13"
+                              :situacao   "Aprovado"
+                              :ano        2014
+                              :disciplina "Geometria Analítica"
+                              :periodo    "2"
+                              :categoria  "Obrigatória"
+                              :creditos   3}
+                             ...
+                             {:conceito   "C"
+                              :codigo     "ESTI015-17"
+                              :situacao   "Aprovado"
+                              :ano        2018
+                              :disciplina "Comunicações Móveis"
+                              :periodo    "2"
+                              :categoria  "Opção Limitada"
+                              :creditos   4}])
+                    </code></pre>
+                </section>
+                
+                <section>
+                    <p>disciplina</p>
+                    <pre><code data-trim data-noescape class="clojure">
+                        {:conceito   "C"
+                         :codigo     "BCN0404-13"
+                         :situacao   "Aprovado"
+                         :ano        2014
+                         :disciplina "Geometria Analítica"
+                         :periodo    "2"
+                         :categoria  "Obrigatória"
+                         :creditos   3}
+                    </code></pre>
+                </section>
+
+				<section>
+					<p>como listar somente o nome das disciplinas?</p>
+				</section>
+                
+                <section>
+                    <pre class="small"><code data-trim data-noescape class="clojure">
+                        {:conceito   "C"
+                         :codigo     "BCN0404-13"
+                         :situacao   "Aprovado"
+                         :ano        2014
+                         :disciplina "Geometria Analítica"
+                         :periodo    "2"
+                         :categoria  "Obrigatória"
+                         :creditos   3}
+                    </code></pre>
+                    <pre class="fragment fade-up medium" data-fragment-index="2"><code data-trim data-noescape class="clojure">
+                        (<span class="fragment highlight-current-white">:disciplina</span> {:conceito   "C"
+                                      :codigo     "BCN0404-13"
+                                      :situacao   "Aprovado"
+                                      :ano        2014
+                                      :disciplina "Geometria Analítica"
+                                      :periodo    "2"
+                                      :categoria  "Obrigatória"
+                                      :creditos   3})
+                    </code></pre>
+					<pre class="fragment fade-up" data-fragment-index="1"><code data-trim data-noescape class="clojure">
+						=> "Geometria Analítica"
+					</code></pre>
+                </section>
+
+				<section>
+					<p>beleza, mas quero o nome de TODAS</p>
+					<p class="fragment fade-up">~ faz logo um "for" ai! ~</p>
+				</section>
+
+				<section data-background-image="images/map_meme.jpg" data-background-size="contain"></section>
+                
+                <section>
+                    <p>map</p>
+                    <pre><code data-trim data-noescape class="clojure">
+                        (<span class="fragment highlight-current-white">map</span> <span class="fragment highlight-current-white">:disciplina</span> <span class="fragment highlight-current-white">disciplinas</span>)
+                    </code></pre>
+                    <pre class="small"><code data-trim data-noescape class="clojure">
+                        => ("Geometria Analítica"
+                            "Base Experimental das Ciências Naturais"
+                            "Estrutura da Matéria"
+                            "Origem da Vida e Diversidade dos Seres Vivos"
+                            "Bases Computacionais da Ciência"
+                            ...
+                            "Eletrônica Analógica Aplicada"
+                            "Processamento Digital de Sinais"
+                            "Comunicações Móveis")
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>como filtrar só as disciplinas que fiz em 2017?</p>
+                </section>
+                
+                <section>
+                    <p>foi em 2017?</p>
+                    <pre class="medium"><code data-trim data-noescape class="clojure">
+                        (= 2017 
+                           (<span class="fragment highlight-current-white">:ano</span> {:conceito   "C"
+                                  :codigo     "ESTI005-13"
+                                  :situacao   "Aprovado"
+                                  :ano        2017
+                                  :disciplina "Sinais Aleatórios"
+                                  :periodo    "1"
+                                  :categoria  "Opção Limitada"
+                                  :creditos   4}))
+                    </code></pre>
+                    <pre class="fragment fade-up"><code data-trim data-noescape class="clojure">
+                        (= 2017
+                           2017)
+                    </code></pre>
+                    <pre class="fragment fade-up"><code data-trim data-noescape class="clojure">
+                        => true
+                    </code></pre>
+                </section>
+                
+                <section>
+                    <p>quero uma função pra isso!</p>
+                    <pre class="medium"><code data-trim data-noescape class="clojure">
+                        (= 2017 
+                           (:ano {:conceito   "C"
+                                  :codigo     "ESTI005-13"
+                                  :situacao   "Aprovado"
+                                  :ano        2017
+                                  :disciplina "Sinais Aleatórios"
+                                  :periodo    "1"
+                                  :categoria  "Opção Limitada"
+                                  :creditos   4}))
+                    </code></pre>
+                    <pre><code data-trim data-noescape class="clojure">
+                        (defn ano-2017? [disciplina]
+                          (= 2017
+                             (:ano disciplina)))
+                    </code></pre>
+                </section>
+                
+                <section>
+                    <p>mas assim fica uma bagunça</p>
+                    <pre><code data-trim data-noescape class="clojure">
+                        (defn ano-2017? [disciplina]
+                          (= 2017
+                             (:ano disciplina)))
+                    </code></pre>
+                    <div class="fragment fade-up">
+                        <p>let</p>
+                        <pre><code data-trim data-noescape class="clojure">
+                            (defn ano-2017? [disciplina]
+                              (<span class="fragment highlight-current-white">let</span> <span class="fragment highlight-current-white">[ano (:ano disciplina)]</span>
+                                (= <span class="fragment highlight-current-white">ano</span> 2017)))
+                        </code></pre>
+                    </div> 
+                </section>
+                
+                <section>
+                    <p>filter</p>
+                    <pre><code data-trim data-noescape class="clojure">
+                        (<span class="fragment highlight-current-white">filter</span> <span class="fragment highlight-current-white">ano-2017?</span> <span class="fragment highlight-current-white">disciplinas</span>)
+                    </code></pre>
+                    <pre class="small"><code class="stretch" data-trim data-noescape class="clojure">
+                        => ({:conceito   "C"
+                             :codigo     "BCK0104-15"
+                             :situacao   "Aprovado"
+                             :ano        2017
+                             :disciplina "Interações Atômicas e Moleculares"
+                             :periodo    "1"
+                             :categoria  "Obrigatória"
+                             :creditos   3}
+                            ...
+                            {:conceito   "C"
+                             :codigo     "ESTI003-17"
+                             :situacao   "Aprovado"
+                             :ano        2017
+                             :disciplina "Transformadas em Sinais e Sistemas Lineares"
+                             :periodo    "3"
+                             :categoria  "Opção Limitada"
+                             :creditos   4})
+                    </code></pre>
+                </section>
+
+				<section data-background-image="images/prograd_meme.jpg" data-background-size="contain"></section>
+
+                <section>
+                    <p>como remover as reprovações?</p>
+                </section>
+                
+                <section>
+                    <p>reprovou?</p>
+                    <pre><code data-trim data-noescape class="clojure">
+                        (defn reprovou? [disciplina]
+                          (let [situacao (:situacao disciplina)]
+                            (= situacao "Reprovado")))
+                    </code></pre>
+                </section>
+                
+                <section>
+                    <p>remove</p>
+                    <pre><code data-trim data-noescape class="clojure">
+                        (<span class="fragment highlight-current-white">remove</span> <span class="fragment highlight-current-white">reprovou?</span> <span class="fragment highlight-current-white">disciplinas</span>)
+                    </code></pre>
+                    <pre class="small"><code class="stretch" data-trim data-noescape class="clojure">
+                        => ({:conceito   "C"
+                             :codigo     "BCN0404-13"
+                             :situacao   "Aprovado"
+                             :ano        2014
+                             :disciplina "Geometria Analítica"
+                             :periodo    "2"
+                             :categoria  "Obrigatória"
+                             :creditos   3}
+                            ...
+                            {:conceito   "C"
+                             :codigo     "ESTI015-17"
+                             :situacao   "Aprovado"
+                             :ano        2018
+                             :disciplina "Comunicações Móveis"
+                             :periodo    "2"
+                             :categoria  "Opção Limitada"
+                             :creditos   4})
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>quantos créditos eu já fiz?</p>
+                </section>
+                
+                <section>
+                    <p>map</p>
+                    <pre><code data-trim data-noescape class="clojure">
+                        (<span class="fragment highlight-current-white">map</span> <span class="fragment highlight-current-white">:creditos</span> <span class="fragment highlight-current-white">disciplinas</span>)
+                    </code></pre>
+                    <pre><code data-trim data-noescape class="clojure">
+                            => (3 3 3 3 2 4 5 3 3 4 4 5 5 4 5 3 4 3 3 
+                                2 5 2 4 4 3 4 4 4 2 4 6 3 3 2 3 4 3 4 
+                                4 4 5 4 4 4 3 5 4 4 5 4 4 2 5 4 4 4 4)
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p>reduce</p>
+                    <pre><code data-trim data-noescape class="clojure">
+                        (<span class="fragment highlight-current-white">reduce</span> <span class="fragment highlight-current-white">+</span> <span class="fragment highlight-current-white">[1 2 3]</span>)
+                    </code></pre>
+                    <pre><code data-trim data-noescape class="clojure">
+                         => 6
+                    </code></pre>
+                    <div class="fragment fade-up">
+                        <pre><code data-trim data-noescape class="clojure">
+                            (<span class="fragment highlight-current-white">reduce</span> <span class="fragment highlight-current-white">+</span> <span class="fragment highlight-current-white">(map :creditos disciplinas)</span>)
+                        </code></pre>
+                        <pre><code data-trim data-noescape class="clojure">
+                            => 212
+                        </code></pre>
+                    </div>
+                </section>
+
+                <section>
+                    <pre class="small2"><code data-trim data-noescape class="clojure">
+                        (<span class="fragment highlight-current-white" data-fragment-index="3">reduce</span> <span class="fragment highlight-current-white" data-fragment-index="4">+</span> <span class="fragment highlight-current-white"  data-fragment-index="2">(map :creditos <span class="fragment highlight-current-white"  data-fragment-index="1">(remove reprovou? disciplinas)</span>)</span>)
+                    </code></pre>
+                    <pre><code data-trim data-noescape class="clojure">
+                         => 197
+                    </code></pre>
+                    <p class="fragment fade-up" data-fragment-index="5">thread</p>
+                    <pre class="fragment fade-up" data-fragment-index="5"><code data-trim data-noescape class="clojure">
+                        (->> <span class="fragment highlight-current-white" data-fragment-index="6">disciplinas</span>
+                             <span class="fragment highlight-current-white" data-fragment-index="7">(remove reprovou?)</span>
+                             <span class="fragment highlight-current-white" data-fragment-index="8">(map :creditos)</span>
+                             <span class="fragment highlight-current-white" data-fragment-index="9">(reduce +)</span>)
+                    </code></pre>
+                    <pre class="fragment fade-up"  data-fragment-index="5"><code data-trim data-noescape class="clojure">
+                         => 197
+                    </code></pre>
+                </section>
+
+                <section>
+					<h2>dúvidas?</h2>
+				</section>
+
+                <section>
+					<h2>Obrigado!</h2>
+                    <p class="purple">sou.nu/vagasnu</p>
+                    <p>github.com/pitalig</p>
+                    <p>linkedin.com/in/gpitali/</p>
+                    <p>facebook.com/gabrielpitali</p>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+                width: 960,
+                height: 720,
+                margin: 0.1,
+                minScale: 0.2,
+                maxScale: 2,
+				progress: true,
+				history: true,
+				overview: false,
+                controls: false,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
